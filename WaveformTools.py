@@ -313,12 +313,12 @@ class Binary():
         if (Dl == None): # convert redshift into luminosity distance
             self.z = z # TODO: check that one of these is provided
             self.Dl = get_Dl(self.z, Omega_m, H0) # Dl returned in seconds (i.e. G=c=1, geometric units)
-            print("Redshift provided. \n\tLuminosity Distance........... {} Mpc".format(self.Dl/MPC))
+            print(r"Redshift provided. \n\tLuminosity Distance........... {} Mpc".format(self.Dl/MPC))
 
         else: # convert luminosity distance to redshift
             self.Dl = Dl # TODO: check that one of these is provided
             self.z = optimize.root(get_z, 1., args=(self.Dl, Omega_m, H0)).x[0]
-            print("Luminosity Distance provided. \n\tredshift........... {}".format(self.z))
+            print(r"Luminosity Distance provided. \n\tredshift........... {}".format(self.z))
             
         # adjust source-frame masses to detector-frame masses
         self.m1 *= 1. + self.z 
