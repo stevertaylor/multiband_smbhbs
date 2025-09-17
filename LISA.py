@@ -26,7 +26,7 @@ def LoadTransfer(self, file_name):
         
     except: # If file isn't successfully read in, use approximate transfer function
         print("Warning: Could not find transfer function file!")
-        print("         \tApproximation will be used...")
+        print(r"         \tApproximation will be used...")
         self.FLAG_R_APPROX = True
         return
         
